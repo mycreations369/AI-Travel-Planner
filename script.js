@@ -16,13 +16,13 @@ let itinerary="";
 for(let i=1;i<=days;i++){
 
 if(i===1){
-itinerary+=`<li>Day ${i}: Arrival at ${destination} and local sightseeing.</li>`;
+itinerary+=`<li>Day ${i}: Arrival at ${destination} and sightseeing.</li>`;
 }
 else if(i===days){
 itinerary+=`<li>Day ${i}: Shopping and departure.</li>`;
 }
 else{
-itinerary+=`<li>Day ${i}: Explore ${interest} attractions and enjoy local experiences.</li>`;
+itinerary+=`<li>Day ${i}: Explore ${interest} attractions and local culture.</li>`;
 }
 }
 
@@ -36,9 +36,10 @@ document.getElementById("result").innerHTML=`
 <div class="card">
 
 <h2>📍 Destination Suggestions</h2>
+
 <ul>
 <li>${destination}</li>
-<li>Nearby Tourist Spots</li>
+<li>Nearby Tourist Attractions</li>
 <li>Hidden Gems</li>
 </ul>
 
@@ -50,13 +51,13 @@ ${itinerary}
 </div>
 
 <div class="section">
-<h2>💰 Budget Estimate</h2>
+<h2>💰 Budget Breakdown</h2>
 <ul>
 <li>Hotel: ₹${hotel}</li>
 <li>Food: ₹${food}</li>
 <li>Travel: ₹${travel}</li>
 <li>Activities: ₹${activities}</li>
-<li><strong>Total: ₹${budget}</strong></li>
+<li><strong>Total Budget: ₹${budget}</strong></li>
 </ul>
 </div>
 
@@ -64,37 +65,52 @@ ${itinerary}
 <h2>🎒 Packing Checklist</h2>
 <ul>
 <li>Clothes</li>
+<li>Shoes</li>
 <li>Power Bank</li>
-<li>Charger</li>
-<li>ID Card</li>
+<li>Mobile Charger</li>
+<li>ID Proof</li>
 <li>Medicines</li>
-<li>Sunglasses</li>
 <li>Water Bottle</li>
 </ul>
 </div>
 
 <div class="section">
 <h2>🌤 Weather Suggestion</h2>
-<p>Check local weather forecast before departure.</p>
+<p>Check weather forecast before departure and pack accordingly.</p>
 </div>
 
 <div class="section">
 <h2>🛡 Safety Tips</h2>
 <ul>
-<li>Keep emergency contacts saved.</li>
-<li>Carry cash and digital payment options.</li>
-<li>Keep documents safe.</li>
-<li>Stay aware of local rules.</li>
+<li>Keep emergency contacts handy.</li>
+<li>Avoid carrying excessive cash.</li>
+<li>Keep documents secure.</li>
+<li>Stay aware of local guidelines.</li>
 </ul>
 </div>
 
 <div class="section">
 <h2>✨ Travel Summary</h2>
-<p>Enjoy your ${travelType} trip to ${destination} focused on ${interest} experiences.</p>
+<p>Enjoy your ${travelType} trip to ${destination} with a focus on ${interest} experiences.</p>
 </div>
 
 </div>
 `;
+}
+
+function openMap(){
+
+let destination=document.getElementById("destination").value;
+
+if(destination===""){
+alert("Enter a destination first");
+return;
+}
+
+window.open(
+`https://www.google.com/maps/search/${destination}`,
+"_blank"
+);
 }
 
 function downloadPlan(){
@@ -102,14 +118,16 @@ function downloadPlan(){
 let content=document.getElementById("result").innerText;
 
 if(content===""){
-alert("Generate a travel plan first!");
+alert("Generate a plan first");
 return;
 }
 
 let blob=new Blob([content],{type:"text/plain"});
+
 let link=document.createElement("a");
 
 link.href=URL.createObjectURL(blob);
+
 link.download="Travel_Plan.txt";
 
 link.click();
