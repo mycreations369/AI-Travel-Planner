@@ -95,6 +95,11 @@ ${itinerary}
 </div>
 
 <div class="section">
+<h2>🏨 Recommended Stay Type</h2>
+<p>${budget > 50000 ? "Luxury Hotel" : budget > 20000 ? "Comfort Hotel" : "Budget Hotel"}</p>
+</div>
+
+<div class="section">
 <h2>🛡 Safety Tips</h2>
 <ul>
 <li>Keep emergency contacts saved.</li>
