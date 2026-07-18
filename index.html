@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Travel Planner</title>
+<title>AI Smart Travel Planner Pro</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-<h1>✈️ AI Travel Planner</h1>
-<p class="subtitle">Plan your perfect trip instantly</p>
+<h1>✈️ AI Smart Travel Planner Pro</h1>
+<p class="subtitle">Plan your dream trip in seconds</p>
 
 <div class="form-box">
 
-<input type="text" id="destination" placeholder="Enter Destination">
+<input type="text" id="destination" placeholder="Destination">
 
 <input type="number" id="days" placeholder="Number of Days">
 
-<input type="number" id="budget" placeholder="Budget in ₹">
+<input type="number" id="budget" placeholder="Budget (₹)">
 
 <select id="travelType">
 <option value="Solo">Solo</option>
@@ -28,7 +28,16 @@
 <option value="Couple">Couple</option>
 </select>
 
+<select id="interest">
+<option value="Adventure">Adventure</option>
+<option value="Nature">Nature</option>
+<option value="Food">Food</option>
+<option value="Historical">Historical</option>
+<option value="Shopping">Shopping</option>
+</select>
+
 <button onclick="generatePlan()">Generate Travel Plan</button>
+<button onclick="downloadPlan()">Download Plan</button>
 
 </div>
 
