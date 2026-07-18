@@ -8,16 +8,13 @@ font-family:Arial,sans-serif;
 body{
 background:linear-gradient(135deg,#4facfe,#00f2fe);
 min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
 padding:20px;
 }
 
 .container{
+max-width:1000px;
+margin:auto;
 background:white;
-width:90%;
-max-width:900px;
 padding:30px;
 border-radius:20px;
 box-shadow:0 10px 30px rgba(0,0,0,0.2);
@@ -25,14 +22,14 @@ box-shadow:0 10px 30px rgba(0,0,0,0.2);
 
 h1{
 text-align:center;
-color:#333;
 margin-bottom:10px;
+color:#333;
 }
 
 .subtitle{
 text-align:center;
-color:#666;
 margin-bottom:25px;
+color:#666;
 }
 
 .form-box{
@@ -43,23 +40,22 @@ gap:15px;
 input,select{
 padding:12px;
 border:1px solid #ccc;
-border-radius:8px;
+border-radius:10px;
 font-size:16px;
 }
 
 button{
-background:#4facfe;
-color:white;
-border:none;
 padding:12px;
+border:none;
+border-radius:10px;
+background:#2196f3;
+color:white;
 font-size:16px;
-border-radius:8px;
 cursor:pointer;
-transition:0.3s;
 }
 
 button:hover{
-background:#008cff;
+background:#1565c0;
 }
 
 .card{
@@ -69,15 +65,11 @@ background:#f8f9fa;
 border-radius:15px;
 }
 
-.card h2{
-margin-bottom:10px;
-color:#333;
-}
-
-.card ul{
-margin-left:20px;
-}
-
 .section{
-margin-top:15px;
+margin-top:20px;
+}
+
+ul{
+margin-left:20px;
+line-height:1.8;
 }
